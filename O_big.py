@@ -7,7 +7,7 @@ while len(array) < 10:
     array.append(randint(1, 10))
 print('Массив-', *array)
 
-
+'''
 # Вывод значения каждого элемента массива
 def output_big_O(array):
     big_O = 0
@@ -18,6 +18,7 @@ def output_big_O(array):
 
 
 print('кол-во операций вывода ', output_big_O(array))
+
 
 # Удвоение значения каждого элемента массива
 def doubling(array):
@@ -40,9 +41,22 @@ def doubling_first(array):
 
 
 print('удвоение первого ', doubling_first(array))
+'''
+
 
 # Создание таблицы умножения для всех элементов массива
 # на каждый элемент по очереди
 def multiplication(array):
+    mul = []
+    indeX = 0
     for i in array:
-        i
+        for a in array:
+            a *= array[indeX]
+            mul.append(a)
+        mul.append('\n')
+        indeX += 1
+    return mul
+
+
+print('Умножение')
+print(*multiplication(array))
