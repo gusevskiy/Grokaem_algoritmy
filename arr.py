@@ -2,7 +2,7 @@ from random import randint
 from time import sleep
 
 
-arr = []
+arr = [] # Создаем массив
 while len(arr) < 10:
     arr.append(randint(1, 10))
 print('Массив-', *arr)
@@ -16,12 +16,7 @@ def fun_sum():
     return total
 print('Сумма по fun_sum-', fun_sum())
 
-# рекурсивеая ф-я
-def recurs_sum(arr):
-    if not arr:
-        return 0
-    return arr[0] + recurs_sum(arr[1:])
-print('Сумма по recurs_sum-', recurs_sum(arr))
+
 
 # найти наибольший элемент в массиве
 def max_number_arr(arr):
