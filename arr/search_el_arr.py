@@ -17,25 +17,15 @@ def large(arr):
            max_ = ele
     return max_, o_big
 
-# Перебором поиск наименьшего элемента в массиве стр 57
-def find_smalles(ar):
-    smalles = ar[0]
-    o_big = 0
-    for i in range(1, len(ar)):
-        o_big += 1
-        if ar[i] < smalles: # для максимального нужно поменять знак >
-            smalles = ar[i]
-    return smalles, o_big
+
 
 # линейный алгоритм поиск мин
 def min_item(items, *, key=lambda x: x):
     min_, *items = items
-    o_big = 0
     for item in items:
-        o_big += 1
         if key(item) < key(min_):
             min_ = item
-    return min_, o_big
+    return min_
 
 
 _sentinel = object()
@@ -52,18 +42,16 @@ def min(first, *args, key=lambda x: x, default=_sentinel):
     elif default is not _sentinel:
         raise TypeError("Cannot specify a default for min() with multiple positional arguments")
     min_key = key(first)
-    o_big = 0
     for arg in args:
-        o_big += 1
         k = key(arg)
         if k < min_key:
             min_key = k
             first = arg
-    return first, o_big
+    return first
 
 if __name__ == '__main__':
-    print(large(offset_arr))
+    # print(large(offset_arr))
     print(find_smalles(offset_arr))
-    print(min_item(offset_arr))
-    print(min(offset_arr))
+    # print(min_item(offset_arr))
+    # print(min(offset_arr))
 
