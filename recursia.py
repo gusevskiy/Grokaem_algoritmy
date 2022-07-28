@@ -1,8 +1,11 @@
 from random import randint
 
+def fact(x):
+    if x == 1:
+        return 1
+    else:
+        return x * fact(x -1)
 
-
-ar = [1, 4, 7, 12, 5]
 
 # for i in range(10):
 #     print(i)
@@ -17,8 +20,12 @@ print('Сумма по recurs_sum-', recurs_sum(ar))
 '''
 
 # Найти наибольший элемент в списке
-a = 0
-for i in ar:
-    if i > a:
-        a = i
-print(a)
+# a = 0
+# for i in ar:
+#     if i > a:
+#         a = i
+# print(a)
+
+
+if __name__ == '__main__':
+    print(fact(5))

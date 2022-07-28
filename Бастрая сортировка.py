@@ -1,16 +1,37 @@
 from time import sleep
 
+ar = [1, 4, 7, 12, 55]
 
-ar = [1, 4, 7, 12, 5]
 
-# Сортировка массива
-def quicksort(arr):
-    if len(arr) < 2:
-        return arr
+def sum_arr(ar):
+    """сумма массива рекурсивно"""
+    if ar ==[]:
+        return 0
     else:
-        pivot = arr[0]
-        less = [i for i in arr[1:] if i <= pivot]
-        greater = [i for i in arr [1:] if i > pivot]
+        s = ar[0] + sum_arr(ar[1:])
+        return s
+
+def max_num_in_list(ar):
+    """наибольший элемент массива"""
+    if len(ar) == 1:
+        return ar[0]
+    else:
+        max_ = ar[0]
+        for i in ar:
+            if max_ < i:
+                max_ = i
+        return max_
+
+
+
+    # Сортировка массива
+def quicksort(ar):
+    if len(ar) < 2:
+        return ar
+    else:
+        pivot = ar[0]
+        less = [i for i in ar[1:] if i <= pivot]
+        greater = [i for i in ar [1:] if i > pivot]
         return quicksort(less) + [pivot] + quicksort(greater)
 #print('быстрая сортировка массива ', quicksort(ar))
 
@@ -30,6 +51,10 @@ def print_import_slip2(list):
 
 
 if __name__ == '__main__':
-    print_import_slip1(ar)
-    print()
-    print_import_slip2(ar)
+    print(quicksort(ar))
+    # print_import_slip1(ar)
+    # print()
+    # print_import_slip2(ar)
+    # print(sum_arr(ar))
+    # print(ar[1:])
+    # print(max_num_in_list(ar))
