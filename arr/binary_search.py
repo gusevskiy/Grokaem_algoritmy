@@ -12,22 +12,22 @@ str_arr = ['Adam', 'Adrian', 'Agnes', 'Alba', 'Albin', 'Alexande', 'Alfred', 'Al
 def binary_search(ar, item):
     low = 0
     high = len(ar)-1
-    o_big = 0
+    count = 0
     while low <= high:
-        o_big += 1
+        count += 1
         mid = (low + high) // 2  # деление по модулю чтоб не создовать float
         gees = ar[mid]
         if gees == item:
-            return f'Элемент {mid} кол. оп {o_big}'
+            return f'Элемент {mid} кол. оп {count}'
         if gees > item:
             high = mid - 1
         else:
             low = mid + 1
-    return f'Элемент {None} кол. оп {o_big}'
+    return f'Элемент {None} кол. оп {count}'
 
 
 if __name__ == '__main__':
-    print(binary_search(str_arr, 'Adrian'))
+    print(binary_search(str_arr, 'tyu'))
     print(len(str_arr))
 
 
